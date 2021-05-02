@@ -3,26 +3,28 @@ CREATE DATABASE employee_DB;
 
 USE employee_DB;
 
-CREATE TABLE department(
+CREATE TABLE departments(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE role(
+CREATE TABLE roles(
     id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(30),
     salary DECIMAL(12,2) NOT NULL,
     department_id INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (department_id) REFERENCES department(id)
+    FOREIGN KEY (department_id) REFERENCES departments(id)
 );
 
-CREATE TABLE employee(
+CREATE TABLE employees(
     id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     role_id INT,
     manager_id INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (role_id) REFERENCES role(id)
+    FOREIGN KEY (role_id) REFERENCES roles(id),
+    FOREIGN KEY (manager_id) REFERENCES employees(id)
 );
