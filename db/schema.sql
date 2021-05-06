@@ -15,7 +15,7 @@ CREATE TABLE roles(
     salary DECIMAL(12,2) NOT NULL,
     department_id INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (department_id) REFERENCES departments(id)
+    FOREIGN KEY (department_id) REFERENCES departments(id) ON DELETE SET NULL
 );
 
 CREATE TABLE employees(
@@ -25,6 +25,13 @@ CREATE TABLE employees(
     role_id INT,
     manager_id INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (role_id) REFERENCES roles(id),
-    FOREIGN KEY (manager_id) REFERENCES employees(id)
+    FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL,
+    FOREIGN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL
 );
+
+/* 
+Note:
+Discuss on ON DELETE CASCADE, and ON DELETE SET NULL
+Deleting row from a table with foreign key constraints
+https://stackoverflow.com/questions/58893063/deleting-row-from-a-table-with-foreign-key-constraints
+ */
