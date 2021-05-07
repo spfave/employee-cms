@@ -31,7 +31,7 @@ CREATE TABLE employees(
 
 /* 
 Note:
-Discuss on ON DELETE CASCADE, and ON DELETE SET NULL
+Discussion ON DELETE CASCADE, and ON DELETE SET NULL
 Deleting row from a table with foreign key constraints
 https://stackoverflow.com/questions/58893063/deleting-row-from-a-table-with-foreign-key-constraints
  */
