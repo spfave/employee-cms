@@ -23,7 +23,7 @@ This application is built with JavaScript and can be run using the Node.js runti
 
 
 &nbsp;
-## **[Video Demonstration]()**
+## **[Video Demonstration](https://youtu.be/z4xDjCrSHxc)**
 &nbsp;
 ## **Development/Application Screenshots**
 <img src="./assets/app-main-menu.png" alt="app start and main menu">
